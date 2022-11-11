@@ -21,3 +21,9 @@ body {
     border-radius: 2em;
     box-shadow: 00.9em 3em rgba(black);
 }
+
+.game-area {
+    position: relative;
+    width: 100%;
+    display: flex;
+}
