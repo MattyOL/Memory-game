@@ -1,0 +1,23 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: ;
+}
+
+body {
+    background-color: aqua;
+}
+
+.wrapper {
+    box-sizing: border-box;
+    width: 25em;
+    padding: 2.5em 3em;
+    background-color: blueviolet;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 0.6em;
+    box-shadow: 00.9em 3em rgba(black);
+}
