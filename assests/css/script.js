@@ -23,3 +23,10 @@ const items = [
     { name: "tan", image: "tan.png"},
     { name: "teal", image: "teal.png"},
 ];
+
+let seconds = 0;
+    minutes = 0;
+
+let moveCount = 0;
+    winCount = 0;  
+
