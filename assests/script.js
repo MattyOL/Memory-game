@@ -14,16 +14,16 @@ let firstCard = false;
 let secondCard = false;
 
 const items = [
-    { name: "slide1", image: "slide1.png"},
-    { name: "burdundy", imag: "burgundy.jpg"},
-    { name: "darkred", image: "darkred.jpg"},
-    { name: "green", image: "green.jpg"},
-    { name: "grey", image: "grey.jpg"},
-    { name: "lightoj", image: "lightoj.jpg"},
-    { name: "purple", images: "purple.jpg"},
-    { name: "springgreen", image: "springgreen.jpg"},
-    { name: "tan", image: "tan.jpg"},
-    { name: "teal", image: "teal.jpg"},
+    { name: "blue", image: "./assests/images/blue.jpg"},
+    { name: "burdundy", image: "./assests/images/burgundy.jpg"},
+    { name: "darkred", image: "./assests/images/darkred.jpg"},
+    { name: "green", image: "./assests/images/green.jpg"},
+    { name: "grey", image: "./assests/images/grey.jpg"},
+    { name: "lightoj", image: "./assests/images/lightoj.jpg"},
+    { name: "purple", image: "./assests/images/purple.jpg"},
+    { name: "springgreen", image: "./assests/images/springgreen.jpg"},
+    { name: "tan", image: "./assests/images/tan.jpg"},
+    { name: "teal", image: "./assests/images/teal.jpg"},
 ];
 
 
@@ -71,9 +71,11 @@ const generateRandom = (size = 4) => {
 const matrixGenerator = (cardValues, size = 4) => {
   gameContainer.innerHTML = "";
   cardValues = [...cardValues, ...cardValues];
+
   //simple shuffle
   cardValues.sort(() => Math.random() - 0.5);
-  for (let i = 0; i < size * size; i++) { console.log(cardValues)
+  console.log(cardValues);
+  for (let i = 0; i < size * size; i++) { 
     
     gameContainer.innerHTML += `
      <div class="card-container" data-card-value="${cardValues[i].name}">
@@ -83,7 +85,59 @@ const matrixGenerator = (cardValues, size = 4) => {
      </div>
      `;
   }
-  
+  //Grid
+  gameContainer.style.gridTemplateColumns = `repeat(${size},auto)`;
+  //Cards
+  cards = document.querySelectorAll(".card-container");
+  cards.forEach((card) => {
+    card.addEventListener("click", () => {
+      //If selected card is not matched yet then only run (i.e already matched card when clicked would be ignored)
+      if (!card.classList.contains("matched")) {
+        //flip the cliked card
+        card.classList.add("flipped");
+        //if it is the firstcard (!firstCard since firstCard is initially false)
+        if (!firstCard) {
+          //so current card will become firstCard
+          firstCard = card;
+          //current cards value becomes firstCardValue
+          firstCardValue = card.getAttribute("data-card-value");
+        } else {
+          //increment moves since user selected second card
+          attemptsCounter();
+          //secondCard and value
+          secondCard = card;
+          let secondCardValue = card.getAttribute("data-card-value");
+          if (firstCardValue == secondCardValue) {
+            //if both cards match add matched class so these cards would beignored next time
+            firstCard.classList.add("matched");
+            secondCard.classList.add("matched");
+            //set firstCard to false since next card would be first now
+            firstCard = false;
+            //winCount increment as user found a correct match
+            winCount += 1;
+            //check if winCount ==half of cardValues
+            if (winCount == Math.floor(cardValues.length / 2)) {
+              result.innerHTML = `<h2>You Won</h2>
+            <h4>Moves: ${attemptsCount}</h4>`;
+              stopGame();
+            }
+          } else {
+            //if the cards dont match
+            //flip the cards back to normal
+            let [tempFirst, tempSecond] = [firstCard, secondCard];
+            firstCard = false;
+            secondCard = false;
+            let delay = setTimeout(() => {
+              tempFirst.classList.remove("flipped");
+              tempSecond.classList.remove("flipped");
+            }, 900);
+          }
+        }
+      }
+    });
+  });
+};
+
 //Start game
 startButton.addEventListener("click", () => {
   attemptsCount = 0;
@@ -99,6 +153,7 @@ startButton.addEventListener("click", () => {
   attempts.innerHTML = `<span>Attempts:</span> ${attemptsCount}`;
   initializer();
 });
+
 //Stop game
 stopButton.addEventListener(
   "click",
@@ -109,6 +164,7 @@ stopButton.addEventListener(
     clearInterval(interval);
   })
 );
+
 //Initialize values and func calls
 const initializer = () => {
   result.innerText = "";
