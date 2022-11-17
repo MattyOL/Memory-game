@@ -17,17 +17,28 @@
     <body>
         <div class="home">
             <div class="stats-container">
-                <div id="moves-counter"></div>
-                <div id="timer"></div>
+                <div id="attempts-count"></div>
+                <div id="time"></div>
             </div>
-            <div class="game-area"></div>
+            <div class="game-container"></div>
             <button id="stop" class="hide">Stop Game</button>
         </div>
         <div class="controls-area">
             <p id="result"></p>
-            <button id="start">Start Game</button>
+            <div>
+                <label for="user-input" class="input-label">Create a Username</label> 
+                <br>
+                <input id="user-input" type="text" name="username" title="Enter Username here" data-error="Username must have 3 or more characters" aria-labelledby="user-input user-error" required="">
+                <div class="feedback" aria-live="assertive" aria-relevant="additions removals" id="user-error"><p id="feedback"></p>
+                    <p id="feedback"></p>
+                </div>
+            </div>
+            <img src="assests/css/images/springgreen.jpg" alt="">
+            <button id="start"><input type="button"   onclick="getUserName();">Start Game</button>
         </div>
         <script src="/assests/css/script.js"></script>
+
+        <script src="https://kit.fontawesome.com/2189c0756e.js" crossorigin="anonymous"></script>
     </body>
 </html>
 
