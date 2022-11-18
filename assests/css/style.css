@@ -150,7 +150,7 @@ input[type="text"] {
     max-width: 300px;
     padding: 0.75em;
     margin: 0.25em auto;
-    background-color: rgba(129, 226, 255, 0.5);
+    background-color: rgba(242, 255, 129, 0.925);
     border-radius: 4px;
     border: none;
     font-size: 1.6rem;
@@ -160,7 +160,7 @@ input[type="text"] {
 .input-label {
     margin-left: 220px;
 }
-#user-input, user-label {
+#user-input {
     margin-left: 175px;
 }
 /* Styling for Error Messages */
@@ -181,6 +181,7 @@ input[type="text"] {
     box-shadow: 0 2px 10px rgba(45, 35, 46, .5);
     cursor: pointer;
 }
+/*Media Queries for Tablets & mobile devices */
 
 @media screen and (max-width:650px) {
     .home {
@@ -204,23 +205,20 @@ input[type="text"] {
    .instruction {
        padding: 2em 2em;
        font-size: 15px;
-   }
+    }
    .instruction h1 {
        font-size: 25px;
-   }
+    }
    button {
         padding: .5em .75em;
-   }
+    }
 
-
-element.style {
-}
-input[type="text"] {
+    input[type="text"] {
     max-width: 300px;
     padding: none;
     margin: 0.25em auto;
     font-size: 1.6rem;
     
-}
+    }
 }
 
