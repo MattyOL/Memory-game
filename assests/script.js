@@ -111,6 +111,17 @@ function getUserName() {
       window.location.replace(`index.html?user=${user}`);     
   }
 }
+
+
+// Prevents page refresh on Enter key for form text input and calls getUserName function
+if (document.getElementById("user-input") != null) {
+  document.getElementById("user-input").addEventListener("keydown", function(event) {
+  if (event.key === 'Enter') {
+          event.preventDefault();
+          getUserName();
+      }
+  });
+}
 //For timer
 const timeGenerator = () => {
   seconds += 1;

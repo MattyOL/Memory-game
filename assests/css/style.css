@@ -1,8 +1,11 @@
+/* Font family link */
+@import url('https://fonts.googleapis.com/css2?family=David+Libre:wght@400;500;700&family=Lateef&family=Lato:ital,wght@1,300&family=Love+Ya+Like+A+Sister&family=Open+Sans:wght@300&family=Oswald:wght@300&display=swap');
+
 * {
     padding:0;
     margin: 0;
     box-sizing: border-box;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: sans-serif;
 }
 body {
     background-color: black;
@@ -22,7 +25,7 @@ body {
    
 }
 
-
+/* game area */
 .game-container {
     position: relative;
     width: 100%;
@@ -95,6 +98,7 @@ body {
     background-color: #000000;
     top: 0;
 }
+/* Intructions area */
 .instruction {
     color: #fff5f8;
     padding: 4em 4em;
@@ -105,12 +109,14 @@ body {
     text-align: center;
     
 }
-button {
+/* Start game / stop game */
+#start {
     border: none;
     border-radius: 0.3em;
     padding: 1em 1.5em;
     cursor: pointer;
     background-color: green;
+    color: white;
 }
 #stop {
     font-size: 1.1em;
@@ -137,6 +143,7 @@ button {
     margin: 0.6em 0 1em 0;
 }
 
+/* username area*/
 .input-label {
     font-size: 1.5rem;
     background-color: transparent;
