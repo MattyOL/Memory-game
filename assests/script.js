@@ -38,7 +38,7 @@ startButton.addEventListener("click", () => {
   attemptsCount = 0;
   seconds = 0;
   minutes = 0;
-  //controls amd buttons visibility
+  //controls and buttons visibility
   controls.classList.add("hide");
   stopButton.classList.remove("hide");
   startButton.classList.add("hide");
@@ -100,15 +100,15 @@ function validateUserInput(user) {
 
 /**
 * Gets and stores user input if validateUserInput 
-* function is true and redirects to quiz.html page
+* function is true and redirects to index.html page
 */
 function getUserName() {
 
   let user = username.value;
 
   if (validateUserInput(user)) { 
-      // redirects to quiz.html while storing username in url 
-      window.location.replace(`quiz.html?user=${user}`);     
+      // redirects to index.html while storing username in url 
+      window.location.replace(`index.html?user=${user}`);     
   }
 }
 //For timer
@@ -215,5 +215,3 @@ const matrixGenerator = (cardValues, size = 4) => {
     });
   });
 };
-
-
