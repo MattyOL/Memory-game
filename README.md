@@ -21,4 +21,21 @@ This is a memory game website , Its aim is to test ur speed on how quick you can
    
  * Wireframes 
    * The Wireframes were created using justinmind however, the layout and design was fallowed very loosely and changed during the mockup stage.
-   
+   * Home-page
+![Screen Shot 2022-11-22 at 16 13 05](https://user-images.githubusercontent.com/111317260/203364936-273b7205-c2dc-4096-893c-6cd960b0664b.png)
+
+   * Main-Game-Area
+![Screen Shot 2022-11-22 at 16 13 15](https://user-images.githubusercontent.com/111317260/203364950-319550f5-b3fd-44f2-93a7-dfe6caee7f62.png)
+
+
+# Credits 
+
+#code 
+ * 
+ *
+ 
+ 
+#Media 
+ *
+ *
+ *
