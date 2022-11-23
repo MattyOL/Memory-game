@@ -22,6 +22,7 @@ body {
     top: 50%;
     border-radius: 1.5em;
     height: 650px;
+    
    
 }
 
@@ -117,7 +118,9 @@ body {
     cursor: pointer;
     background-color: green;
     color: white;
-   
+    margin: 1.1em auto 0 auto;
+    display: block;
+    letter-spacing: 2px;
 }
 #stop {
     font-size: 1.1em;
@@ -130,6 +133,25 @@ body {
     padding: 1em 1.5em;
     cursor: pointer;
     font-weight: 700;
+    margin-top: 2em;
+    letter-spacing: 2px;
+}
+.btn-start:hover,
+.btn-start:focus {
+    transform: scale(1.05);
+    transition: transform 250ms ease-in-out;
+    font-weight: 700;
+    background-color: green;
+    box-shadow: 0 4px 15px rgb(45, 35, 46);
+    font-weight: 700;
+}
+.btn-stop:hover,
+.btn-stop:focus {
+    transform: scale(1.05);
+    transition: transform 250ms ease-in-out;
+    font-weight: 700;
+    background-color: green;
+    box-shadow: 0 4px 15px rgb(45, 35, 46);
 }
 .controls-area button {
     font-size: 1.3em;
@@ -154,14 +176,16 @@ body {
     font-size: 1.5rem;
     background-color: transparent;
     color: white;
+    display: flex;
 } 
 #feedback {
     color: red;
     font-size: 20px;
-}   
+}
+  
 input[type="text"] {
     max-width: 300px;
-    padding: 0.75em;
+    padding: 0.25em;
     margin: 0.25em auto;
     background-color: rgba(242, 255, 129, 0.925);
     border-radius: 4px;
@@ -169,13 +193,15 @@ input[type="text"] {
     font-size: 1.6rem;
     text-align: center;
     color: #2D232E;
+    display: flex;
+    position: relative;
 }
 .input-label {
-    margin-left: 220px;
+    margin-left: 225px;
+    position: fixed;
 }
-#user-input {
-    margin-left: 175px;
-}
+
+
 /* Styling for Error Messages */
 .feedback {
     max-width: 300px;
@@ -226,6 +252,11 @@ input[type="text"] {
     cursor: pointer;
 }
 /*Media Queries for Tablets & mobile devices */
+@media screen and (max-width:665px) {
+    .input-label{
+       ;
+    }
+}
 
 @media screen and (max-width:650px) {
     .home {
@@ -244,6 +275,10 @@ input[type="text"] {
         font-size: 25px;
         border: 1px solid ;
     }
+}
+@media screen and (max-width:650px) {
+    .input-label{
+       
 }
 @media screen and (max-width:480px) {
    .instruction {

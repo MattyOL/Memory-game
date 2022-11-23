@@ -228,7 +228,7 @@ const matrixGenerator = (cardValues, size = 4) => {
   });
 };
 
- // Results Area 
+ /*// Results Area 
 
 
  function getResults() {
@@ -256,4 +256,4 @@ if (correctTotal == saveUserName) {
 
 }
 
-};
+};*/
