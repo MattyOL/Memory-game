@@ -110,13 +110,14 @@ body {
     
 }
 /* Start game / stop game */
-#start {
+#start{
     border: none;
     border-radius: 0.3em;
     padding: 1em 1.5em;
     cursor: pointer;
     background-color: green;
     color: white;
+   
 }
 #stop {
     font-size: 1.1em;
@@ -124,6 +125,11 @@ body {
     margin: 1.1em auto 0 auto;
     background-color: #b92c2c;
     color: #ffffff;
+    border: none;
+    border-radius: 0.3em;
+    padding: 1em 1.5em;
+    cursor: pointer;
+    font-weight: 700;
 }
 .controls-area button {
     font-size: 1.3em;
@@ -179,6 +185,37 @@ input[type="text"] {
     font-size: 1.6rem;
     color: #fff5f8;
     margin: .5em auto .75em;
+}
+/* Results Area */
+.result-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    text-align: center;
+    padding: 1em;
+}
+.result-area span {
+    margin-bottom: 1.5em;
+}
+.btn-submit {
+    padding: .5em 1em;
+    font-size: 1.6rem;
+    font-weight: 800;  
+    letter-spacing: 2px;
+    margin: 1em auto 0;
+    background-color: orange;
+    color: #fff5f8;
+}
+
+.btn-submit:hover,
+.btn-submit:focus {
+    transform: scale(1.05);
+    transition: transform 250ms ease-in-out;
+    font-weight: 700;
+    background-color: green;
+    box-shadow: 0 4px 15px rgb(45, 35, 46);   
 }
 
 /* General Styling for all buttons */

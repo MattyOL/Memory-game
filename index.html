@@ -21,7 +21,7 @@
                 <div id="time"></div>
             </div>
             <div class="game-container"></div>
-            <button id="stop" class="hide">Stop Game</button>
+            <button id="stop" class="btn btn-stop" class="hide">Stop Game</button>
         </div>
         <div class="controls-area">
             <p id="result"></p>
@@ -58,12 +58,14 @@
             <br>
             <!-- Start Game -->
             <div>
-                <input type="button" id="start" value="START GAME"
+                <input type="button" id="start" class="btn btn-start" value="START GAME"
                     onclick="getUserName();">
             </div>
-            <div id="result-area">
+            <div id="result-area" style="display:;">
                 <p>You Scored</p>
                 <span id="result"></span>
+                <button id="submit"  type="button"
+                    class="btn btn-submit" onclick="getResults();">Results</button>
             </div>
         </div>
 

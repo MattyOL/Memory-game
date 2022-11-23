@@ -7,6 +7,7 @@ const result = document.getElementById("result");
 const controls = document.querySelector(".controls-area");
 const username = document.getElementById('user-input');
 const feedback = document.getElementById('feedback');
+const submitBtn = document.getElementById('submit');
 
 let cards;
 let interval;
@@ -225,4 +226,34 @@ const matrixGenerator = (cardValues, size = 4) => {
       }
     });
   });
+};
+
+ // Results Area 
+
+
+ function getResults() {
+
+  if (validateChecked()) {
+    let highscore = 0;
+    for (let  = 0; i)
+      
+}
+
+function displayResults(correctTotal) {
+
+const controlsArea = document.getElementsByClassName('controlsArea');
+const resultArea = document.getElementById('result-area');
+const result = document.getElementById('result');
+
+let user= saveUserName();
+let score = 0;
+let highscore = 0;
+
+controlsArea.style.display = 'none';
+resultArea.style.display = '';
+
+if (correctTotal == saveUserName) {
+
+}
+
 };
