@@ -27,29 +27,6 @@ const items = [
     { name: "teal", image: "./assests/images/teal.jpg"},
 ];
 
-
-//Initial Time
-let seconds = 0,
-  minutes = 0;
-//Initial Attempts and win count
-let attemptsCount = 0,
-  winCount = 0;
-//Start game
-startButton.addEventListener("click", () => {
-  attemptsCount = 0;
-  seconds = 0;
-  minutes = 0;
-  //controls and buttons visibility
-  controls.classList.add("hide");
-  stopButton.classList.remove("hide");
-  startButton.classList.add("hide");
-  //Start timer
-  interval = setInterval(timeGenerator, 1000);
-  //initial moves
-  attempts.innerHTML = `<span>Attempts:</span> ${attemptsCount}`;
-  initializer();
-});
-
 //Stop game
 stopButton.addEventListener(
   "click",
@@ -109,8 +86,39 @@ function getUserName() {
 
   if (validateUserInput(user)) { 
       // redirects to index.html while storing username in url 
-      window.location.replace(`index.html?user=${user}`);     
+           
+      return true;
   }
+  return false;
+}
+
+function startGame() {
+  if (getUserName()) {
+    initalizeGameScreen();
+    //window.location.replace(`index.html?user=${user}`);
+  }
+}
+
+//Initial Time
+let seconds = 0,
+  minutes = 0;
+//Initial Attempts and win count
+let attemptsCount = 0,
+  winCount = 0;
+  // Start Game
+function initalizeGameScreen() {
+  attemptsCount = 0;
+  seconds = 0;
+  minutes = 0;
+  //controls and buttons visibility
+  controls.classList.add("hide");
+  stopButton.classList.remove("hide");
+  startButton.classList.add("hide");
+  //Start timer
+  interval = setInterval(timeGenerator, 1000);
+  //initial moves
+  attempts.innerHTML = `<span>Attempts:</span> ${attemptsCount}`;
+  initializer();
 }
 
 
@@ -119,7 +127,7 @@ if (document.getElementById("user-input") != null) {
   document.getElementById("user-input").addEventListener("keydown", function(event) {
   if (event.key === 'Enter') {
           event.preventDefault();
-          getUserName();
+          startGame();
       }
   });
 }
@@ -228,32 +236,23 @@ const matrixGenerator = (cardValues, size = 4) => {
   });
 };
 
- /*// Results Area 
-
-
+ // Results Area 
  function getResults() {
-
-  if (validateChecked()) {
+   displayResults();
+  /*if (validateChecked()) {
     let highscore = 0;
-    for (let  = 0; i)
+    for (let  = 0; i) */
       
 }
-
 function displayResults(correctTotal) {
-
 const controlsArea = document.getElementsByClassName('controlsArea');
 const resultArea = document.getElementById('result-area');
 const result = document.getElementById('result');
-
 let user= saveUserName();
-let score = 0;
+let score = ${attemptsCount};
 let highscore = 0;
-
 controlsArea.style.display = 'none';
 resultArea.style.display = '';
-
 if (correctTotal == saveUserName) {
-
 }
-
-};*/
+};
