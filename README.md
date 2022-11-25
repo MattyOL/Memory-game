@@ -39,3 +39,27 @@ This is a memory game website , Its aim is to test ur speed on how quick you can
  *
  *
  *
+ 
+ # Github
+ * Github was used to store the project's code after being pushed from Git.
+ * Gitpod terminal was used to commit my code using Git and push it to Github.
+ * Git was used for version control through the Gitpod terminal.
+ 
+ # Functionality Testing
+ *
+ # Deployment 
+ *This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub)
+
+ * The site was deployed to GitHub pages. The steps to deploy are as follows: In the GitHub repository, navigate to the Settings tab From the source section drop-down menu, select the Master Branch Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
+ 
+ # Local Deployment 
+ * In order to make a local copy of this project, you can clone it. In your IDE Terminal, type the following command to clone my repository:
+  git clone Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
+  Open in Gitpod
+ 
+# Known Bugs 
+
+ 
+ # Credits 
+ 
+ 
