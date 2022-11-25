@@ -3,11 +3,12 @@ const timeValue = document.getElementById("time");
 const startButton = document.getElementById("start");
 const stopButton = document.getElementById("stop");
 const gameContainer = document.querySelector(".game-container");
-const result = document.getElementById("result");
+const resultElement = document.getElementById("result");
 const controls = document.querySelector(".controls-area");
 const username = document.getElementById('user-input');
 const feedback = document.getElementById('feedback');
 const submitBtn = document.getElementById('submit');
+// const highScoreElement = document.getElementById('cc');
 
 let cards;
 let interval;
@@ -40,7 +41,7 @@ stopButton.addEventListener(
 
 //Initialize values and func calls
 const initializer = () => {
-  result.innerText = "";
+  resultElement.innerText = "";
   winCount = 0;
   let cardValues = generateRandom();
   console.log(cardValues);
@@ -103,8 +104,8 @@ function startGame() {
 let seconds = 0,
   minutes = 0;
 //Initial Attempts and win count
-let attemptsCount = 0,
-  winCount = 0;
+let attemptsCount = 0;
+let  winCount = 0;
   // Start Game
 function initalizeGameScreen() {
   attemptsCount = 0;
@@ -215,8 +216,13 @@ const matrixGenerator = (cardValues, size = 4) => {
             winCount += 1;
             //check if winCount ==half of cardValues
             if (winCount == Math.floor(cardValues.length / 2)) {
-              result.innerHTML = `<h2>You Won</h2>
+              resultElement.innerHTML = `<h2>You Won</h2>
             <h4>Moves: ${attemptsCount}</h4>`;
+            const score = {
+              name = username.value,
+              score = attemptsCount
+            } 
+              highscore.push(score);
               stopGame();
             }
           } else {
@@ -248,9 +254,12 @@ function displayResults(correctTotal) {
 const controlsArea = document.getElementsByClassName('controlsArea');
 const resultArea = document.getElementById('result-area');
 const result = document.getElementById('result');
-let user= saveUserName();
-let score = ${attemptsCount};
-let highscore = 0;
+let user = username.value;
+let score = attemptsCount;
+
+if (score>highscore) {
+    
+}
 controlsArea.style.display = 'none';
 resultArea.style.display = '';
 if (correctTotal == saveUserName) {
