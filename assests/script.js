@@ -5,39 +5,37 @@ const stopButton = document.getElementById("stop");
 const gameContainer = document.querySelector(".game-container");
 const resultElement = document.getElementById("result");
 const controls = document.querySelector(".controls-area");
-const username = document.getElementById('user-input');
-const feedback = document.getElementById('feedback');
-const submitBtn = document.getElementById('submit');
+const homeArea = document.querySelector(".home");
+const retryQuestionContainer = document.querySelector(
+  ".retryQuestionContainer"
+);
+const username = document.getElementById("user-input");
+const feedback = document.getElementById("feedback");
+const submitBtn = document.getElementById("submit");
+const resultArea = document.getElementById("result-area");
 // const highScoreElement = document.getElementById('cc');
+
+let retryYes = document.getElementById("retryYes").checked;
+let retryNo = document.getElementById("retryNo").checked;
 
 let cards;
 let interval;
 let firstCard = false;
 let secondCard = false;
+let indexOfLastEntry = 0;
 
 const items = [
-    { name: "blue", image: "./assests/images/blue.jpg"},
-    { name: "burdundy", image: "./assests/images/burgundy.jpg"},
-    { name: "darkred", image: "./assests/images/darkred.jpg"},
-    { name: "green", image: "./assests/images/green.jpg"},
-    { name: "grey", image: "./assests/images/grey.jpg"},
-    { name: "lightoj", image: "./assests/images/lightoj.jpg"},
-    { name: "purple", image: "./assests/images/purple.jpg"},
-    { name: "springgreen", image: "./assests/images/springgreen.jpg"},
-    { name: "tan", image: "./assests/images/tan.jpg"},
-    { name: "teal", image: "./assests/images/teal.jpg"},
+  { name: "blue", image: "./images/blue.png" },
+  { name: "burdundy", image: "./images/burgundy.png" },
+  { name: "darkred", image: "./images/darkred.png" },
+  { name: "green", image: "./images/green.png" },
+  { name: "grey", image: "./images/grey.png" },
+  { name: "lightoj", image: "./images/lightoj.png" },
+  { name: "purple", image: "./images/purple.png" },
+  { name: "springgreen", image: "./images/springgreen.png" },
+  { name: "tan", image: "./images/tan.png" },
+  { name: "teal", image: "./images/teal.png" },
 ];
-
-//Stop game
-stopButton.addEventListener(
-  "click",
-  (stopGame = () => {
-    controls.classList.remove("hide");
-    stopButton.classList.add("hide");
-    startButton.classList.remove("hide");
-    clearInterval(interval);
-  })
-);
 
 //Initialize values and func calls
 const initializer = () => {
@@ -49,90 +47,72 @@ const initializer = () => {
 };
 
 function validateUserInput(user) {
-    
-  let errorMsg = '';
+  let errorMsg = "";
 
   // if no user input is inserted
-  if (user == '') {
-
-      errorMsg = "Please enter a Username";
-  
-  // if user input is less than 3 characters 
-  } else if (user.length <= Number(2)) {
-
-      errorMsg = "Username must have 3 or more characters";
-  } 
+  if (user == "") {
+    errorMsg = "Please enter a Username";
+  }
+  // if user input is less than 3 characters
+  else if (user.length <= Number(2)) {
+    errorMsg = "Username must have 3 or more characters";
+  }
+  //
+  else if (checkForSpecialCharacters(username.value)) {
+    errorMsg = "Username cannot contain special characters";
+  } else if (checkForNumbers(username.value)) {
+    errorMsg = "Username cannot contain numbers";
+  }
 
   // if errorMsg is not empty
-  if (errorMsg != '') {
-      // display errorMsg in feedback div on home page
-      feedback.innerHTML = errorMsg;
-      // adds functionality for screen readers to read error message 
-      // when it is displayed on screen
-      username.setAttribute('data-has-error', 'true');
-      
-      return false;
+  if (errorMsg != "") {
+    // display errorMsg in feedback div on home page
+    feedback.innerHTML = errorMsg;
+    // adds functionality for screen readers to read error message
+    // when it is displayed on screen
+    username.setAttribute("data-has-error", "true");
+
+    return false;
   }
-  
+
   return true;
 }
 
-/**
-* Gets and stores user input if validateUserInput 
-* function is true and redirects to index.html page
-*/
-function getUserName() {
+function checkForSpecialCharacters(username) {
+  const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~£]/;
 
-  let user = username.value;
-
-  if (validateUserInput(user)) { 
-      // redirects to index.html while storing username in url 
-           
-      return true;
+  if (specialChars.test(username)) {
+    return true;
   }
   return false;
 }
 
+function checkForNumbers(username) {
+  return /\d/.test(username);
+}
+
 function startGame() {
-  if (getUserName()) {
-    initalizeGameScreen();
+  if (validateUserInput(username.value)) {
+    changePage(2); // Go to 2nd pagechangePage
     //window.location.replace(`index.html?user=${user}`);
   }
 }
 
-//Initial Time
-let seconds = 0,
-  minutes = 0;
-//Initial Attempts and win count
-let attemptsCount = 0;
-let  winCount = 0;
-  // Start Game
-function initalizeGameScreen() {
-  attemptsCount = 0;
-  seconds = 0;
-  minutes = 0;
-  //controls and buttons visibility
-  controls.classList.add("hide");
-  stopButton.classList.remove("hide");
-  startButton.classList.add("hide");
-  //Start timer
-  interval = setInterval(timeGenerator, 1000);
-  //initial moves
-  attempts.innerHTML = `<span>Attempts:</span> ${attemptsCount}`;
-  initializer();
-}
-
-
 // Prevents page refresh on Enter key for form text input and calls getUserName function
 if (document.getElementById("user-input") != null) {
-  document.getElementById("user-input").addEventListener("keydown", function(event) {
-  if (event.key === 'Enter') {
-          event.preventDefault();
-          startGame();
+  document
+    .getElementById("user-input")
+    .addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        startGame();
       }
-  });
+    });
 }
 //For timer
+let secondsValue = 0;
+let minutesValue = 0;
+
 const timeGenerator = () => {
   seconds += 1;
   //minutes logic
@@ -141,8 +121,8 @@ const timeGenerator = () => {
     seconds = 0;
   }
   //format time before displaying
-  let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
-  let minutesValue = minutes < 10 ? `0${minutes}` : minutes;
+  secondsValue = seconds < 10 ? `0${seconds}` : seconds;
+  minutesValue = minutes < 10 ? `0${minutes}` : minutes;
   timeValue.innerHTML = `<span>Time:</span>${minutesValue}:${secondsValue}`;
 };
 //For calculating Attempts
@@ -150,6 +130,7 @@ const attemptsCounter = () => {
   attemptsCount += 1;
   attempts.innerHTML = `<span>Attempts:</span>${attemptsCount}`;
 };
+
 //Pick random objects from the items array
 const generateRandom = (size = 4) => {
   //temporary array
@@ -174,8 +155,7 @@ const matrixGenerator = (cardValues, size = 4) => {
   //simple shuffle
   cardValues.sort(() => Math.random() - 0.5);
   console.log(cardValues);
-  for (let i = 0; i < size * size; i++) { 
-    
+  for (let i = 0; i < size * size; i++) {
     gameContainer.innerHTML += `
      <div class="card-container" data-card-value="${cardValues[i].name}">
         <div class="card-before"><i class="fa-regular fa-hand-pointer"></i></div>
@@ -214,16 +194,28 @@ const matrixGenerator = (cardValues, size = 4) => {
             firstCard = false;
             //winCount increment as user found a correct match
             winCount += 1;
+            attemptsCount++; // Update Score by 1
+            numberOfMatches++;
+
             //check if winCount ==half of cardValues
             if (winCount == Math.floor(cardValues.length / 2)) {
               resultElement.innerHTML = `<h2>You Won</h2>
             <h4>Moves: ${attemptsCount}</h4>`;
-            const score = {
-              name = username.value,
-              score = attemptsCount
-            } 
-              highscore.push(score);
-              stopGame();
+
+              const score = {
+                name: username.value,
+                score: attemptsCount,
+                time: `${minutesValue}:${secondsValue}`,
+              };
+
+              highscoreArray.push(score);
+              
+              highscoreArray.sort((a, b) => {
+                return a.score - b.score;
+              });
+
+              indexOfLastEntry = highscoreArray.findIndex(item => item.score === score);
+              changePage(3);
             }
           } else {
             //if the cards dont match
@@ -242,26 +234,127 @@ const matrixGenerator = (cardValues, size = 4) => {
   });
 };
 
- // Results Area 
- function getResults() {
-   displayResults();
-  /*if (validateChecked()) {
-    let highscore = 0;
-    for (let  = 0; i) */
-      
-}
 function displayResults(correctTotal) {
-const controlsArea = document.getElementsByClassName('controlsArea');
-const resultArea = document.getElementById('result-area');
-const result = document.getElementById('result');
-let user = username.value;
-let score = attemptsCount;
+  let user = username.value;
+  let score = attemptsCount;
 
-if (score>highscore) {
-    
+  resultArea.classList.remove("hide");
+  retryQuestionContainer.style.display = "none";
+
+  // Create Table
+  mytable =
+    "<table class='table' id='table'>" +
+    "<tr><th>Username</th><th>Time</th><th>Score</th></tr>";
+
+  highscoreArray.sort((a, b) => {
+    return a.score - b.score;
+  });
+
+  for (i = 0; i < highscoreArray.length; i++) {
+    mytable +=
+      "<tr class='trClass'><td id='highScoreName'>" +
+      highscoreArray[i].name +
+      "</td><td id='highScoreName'>" +
+      highscoreArray[i].time +
+      "</td><td>" +
+      highscoreArray[i].score +
+      "</td></tr>";
+  }
+  mytable += "</table>";
+  document.getElementById("table").outerHTML = mytable;
+
+  let el = document.getElementsByClassName("trClass");
+  if (el.className.indexOf("trClass") = indexOfLastEntry) {
+    let el = document.getElementById("table");
+    el.className = el.className.replace(className,"");
+  }
+
+  
+
 }
-controlsArea.style.display = 'none';
-resultArea.style.display = '';
-if (correctTotal == saveUserName) {
+
+function processNewGame() {
+  if (document.getElementById("retryYes").checked) {
+    changePage(1);
+  }
+  if (document.getElementById("retryNo").checked) {
+    changePage(4); // Go to retry question
+  }
 }
-};
+
+//Initial Time
+let seconds = 0,
+  minutes = 0;
+//Initial Attempts and win count
+let attemptsCount = 0;
+let numberOfMatches = 0;
+let winCount = 0;
+// Highscore
+let highscoreArray = Object.keys({});
+
+// Each Case respresents each web page
+function changePage(pageNo) {
+  switch (pageNo) {
+    // Home Page
+    case 1:
+      controls.classList.add("hide");
+      document.getElementById("retryYes").checked = false;
+      document.getElementById("retryNo").checked = false;
+      retryQuestionContainer.style.display = "none";
+      controls.classList.remove("hide");
+      homeArea.classList.remove("hide");
+      username.value = "";
+      resultArea.style.display = "none";
+      break;
+
+    // Start Game
+    case 2:
+      attemptsCount = 0;
+      seconds = 0;
+      minutes = 0;
+      //controls and buttons visibility
+      controls.classList.add("hide");
+      stopButton.classList.remove("hide");
+      startButton.classList.add("hide");
+      resultArea.style.display = "none";
+      retryQuestionContainer.style.display = "none";
+      //Start timer
+      interval = setInterval(timeGenerator, 1000);
+      //initial moves
+      attempts.innerHTML = `<span>Attempts:</span> ${attemptsCount}`;
+      initializer();
+      document.getElementById("retryYes").checked = false;
+      document.getElementById("retryNo").checked = false;
+      break;
+
+    // End Game - Ask User if they want to play again
+    case 3:
+      controls.classList.add("hide");
+      homeArea.classList.add("hide");
+      document.getElementById("retryYes").checked = false;
+      document.getElementById("retryNo").checked = false;
+      retryQuestionContainer.style.display = "flex";
+
+      stopButton.classList.add("hide");
+      startButton.classList.remove("hide");
+      clearInterval(interval);
+      break;
+
+    // End Game - Show Highscores
+    case 4:
+      resultArea.style.display = "flex";
+      displayResults();
+      break;
+    //
+    case 5:
+  }
+}
+
+function stopOrContinueGame(continueGame) {
+  // Check if user wants to try again & keep highscore if they do
+  if (!continueGame) {
+    // if false
+    highscoreArray = Object.keys({});
+  }
+  changePage(1);
+}
