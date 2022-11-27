@@ -265,6 +265,10 @@ input[type="text"] {
     color: white;
 }
 
+.highlight {
+    background-color: #7f854f;
+}
+
 .retryQuestion {
     width: 100%;
     position: absolute;
@@ -348,7 +352,6 @@ input[type="text"] {
 
 /*Media Queries for Tablets & mobile devices */
 
-
 @media screen and (max-width:650px) {
     .home {
         width: auto;
@@ -393,8 +396,28 @@ input[type="text"] {
     
     .home {
         width: 100%;
+        padding: 2em 1em 1em 1em;
+    }
+
+    .card-container {
+        width: 5em;
+        height: 5em;
+    }
+    
+    .stats-container {
+        margin-bottom: 3em;
+    }
+
+    .result-area {
+        padding-right: 8rem;
+        padding-left: 8rem;
     }
 }
-
+@media screen and (max-width:350px) {
+    .card-container {
+        width: 1em;
+        height: 1em;
+    }
+}
 
 

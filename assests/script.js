@@ -15,9 +15,6 @@ const submitBtn = document.getElementById("submit");
 const resultArea = document.getElementById("result-area");
 // const highScoreElement = document.getElementById('cc');
 
-let retryYes = document.getElementById("retryYes").checked;
-let retryNo = document.getElementById("retryNo").checked;
-
 let cards;
 let interval;
 let firstCard = false;
@@ -25,17 +22,18 @@ let secondCard = false;
 let indexOfLastEntry = 0;
 
 const items = [
-  { name: "blue", image: "./images/blue.png" },
-  { name: "burdundy", image: "./images/burgundy.png" },
-  { name: "darkred", image: "./images/darkred.png" },
-  { name: "green", image: "./images/green.png" },
-  { name: "grey", image: "./images/grey.png" },
-  { name: "lightoj", image: "./images/lightoj.png" },
-  { name: "purple", image: "./images/purple.png" },
-  { name: "springgreen", image: "./images/springgreen.png" },
-  { name: "tan", image: "./images/tan.png" },
-  { name: "teal", image: "./images/teal.png" },
+  { name: "blue", image: "./assests/images/blue.jpg"},
+  { name: "burdundy", image: "./assests/images/burgundy.jpg"},
+  { name: "darkred", image: "./assests/images/darkred.jpg"},
+  { name: "green", image: "./assests/images/green.jpg"},
+  { name: "grey", image: "./assests/images/grey.jpg"},
+  { name: "lightoj", image: "./assests/images/lightoj.jpg"},
+  { name: "purple", image: "./assests/images/purple.jpg"},
+  { name: "springgreen", image: "./assests/images/springgreen.jpg"},
+  { name: "tan", image: "./assests/images/tan.jpg"},
+  { name: "teal", image: "./assests/images/teal.jpg"},
 ];
+
 
 //Initialize values and func calls
 const initializer = () => {
@@ -209,13 +207,17 @@ const matrixGenerator = (cardValues, size = 4) => {
               };
 
               highscoreArray.push(score);
-              
+
+              // Sorts the high score object
               highscoreArray.sort((a, b) => {
                 return a.score - b.score;
               });
 
-              indexOfLastEntry = highscoreArray.findIndex(item => item.score === score);
-              changePage(3);
+              // Finds what index the last high score was stored at
+              indexOfLastEntry = highscoreArray.findIndex(
+                (item) => item.score === score.score
+              );
+              changePage(4);
             }
           } else {
             //if the cards dont match
@@ -263,32 +265,19 @@ function displayResults(correctTotal) {
   mytable += "</table>";
   document.getElementById("table").outerHTML = mytable;
 
+  // Retrieve all Table rows
   let el = document.getElementsByClassName("trClass");
-  if (el.className.indexOf("trClass") = indexOfLastEntry) {
-    let el = document.getElementById("table");
-    el.className = el.className.replace(className,"");
-  }
-
-  
-
-}
-
-function processNewGame() {
-  if (document.getElementById("retryYes").checked) {
-    changePage(1);
-  }
-  if (document.getElementById("retryNo").checked) {
-    changePage(4); // Go to retry question
-  }
+  // Highlight the user's last high score
+  el[indexOfLastEntry].classList.add("highlight");
 }
 
 //Initial Time
-let seconds = 0,
+var seconds = 0,
   minutes = 0;
 //Initial Attempts and win count
-let attemptsCount = 0;
-let numberOfMatches = 0;
-let winCount = 0;
+var attemptsCount = 0;
+var numberOfMatches = 0;
+var winCount = 0;
 // Highscore
 let highscoreArray = Object.keys({});
 
@@ -298,8 +287,6 @@ function changePage(pageNo) {
     // Home Page
     case 1:
       controls.classList.add("hide");
-      document.getElementById("retryYes").checked = false;
-      document.getElementById("retryNo").checked = false;
       retryQuestionContainer.style.display = "none";
       controls.classList.remove("hide");
       homeArea.classList.remove("hide");
@@ -323,16 +310,12 @@ function changePage(pageNo) {
       //initial moves
       attempts.innerHTML = `<span>Attempts:</span> ${attemptsCount}`;
       initializer();
-      document.getElementById("retryYes").checked = false;
-      document.getElementById("retryNo").checked = false;
       break;
 
     // End Game - Ask User if they want to play again
     case 3:
       controls.classList.add("hide");
       homeArea.classList.add("hide");
-      document.getElementById("retryYes").checked = false;
-      document.getElementById("retryNo").checked = false;
       retryQuestionContainer.style.display = "flex";
 
       stopButton.classList.add("hide");
@@ -342,6 +325,8 @@ function changePage(pageNo) {
 
     // End Game - Show Highscores
     case 4:
+      controls.classList.add("hide");
+      homeArea.classList.add("hide");
       resultArea.style.display = "flex";
       displayResults();
       break;
