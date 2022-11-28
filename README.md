@@ -7,8 +7,12 @@ This is a memory game website , Its aim is to test ur speed on how quick you can
 
 
 
-# Design 
 
+
+
+# Design 
+ * Color Scheme 
+<img width="112" alt="Screen Shot 2022-11-28 at 02 25 08" src="https://user-images.githubusercontent.com/111317260/204178357-e9b6a73e-bb0d-407a-bc5a-cf4c8f6118dd.png"><img width="98" alt="Screen Shot 2022-11-28 at 02 25 00" src="https://user-images.githubusercontent.com/111317260/204178372-9bf5f9ca-4399-46ad-a019-bf2d1769a84a.png">![Uploading Screen Shot 2022-11-28 at 02.26.54.png…]()
 
  * Typograhpy 
    * The main font used was sans-serif
