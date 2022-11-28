@@ -9,9 +9,7 @@ This is a memory game website , Its aim is to test ur speed on how quick you can
 
 # Design 
 
- * color scheme 
- rgb(0, 255, 255) 
- 
+
  * Typograhpy 
    * The main font used was sans-serif
 
@@ -36,6 +34,7 @@ This is a memory game website , Its aim is to test ur speed on how quick you can
    * High-Score-Leaderboard
 
 
+
     ![Screen Shot 2022-11-28 at 01 51 42](https://user-images.githubusercontent.com/111317260/204175219-edb7e9cc-0e23-4e36-b77a-aa467a6db871.png)
 
 
@@ -56,9 +55,8 @@ This is a memory game website , Its aim is to test ur speed on how quick you can
 
 
 # Media 
- *
- *
- *
+ * The Imgs were screen shoted and taken from color pallete. 
+
  
  # Github
  * Github was used to store the project's code after being pushed from Git.
@@ -80,13 +78,14 @@ This is a memory game website , Its aim is to test ur speed on how quick you can
  # JSHINT Validator 
  *[Results
 ](https://jshint.com/) 
+* Warnings are showing , Would like to get feedback on these. 
 
-# Lighthouse Test inpect 
+# Lighthouse Test on Inspect 
 * Deskstop Devices
 <img width="767" alt="Screen Shot 2022-11-28 at 01 56 42" src="https://user-images.githubusercontent.com/111317260/204175835-4108b90b-1a0f-486c-9e3f-265698b58512.png">
 * Mobile Devices 
 <img width="801" alt="Screen Shot 2022-11-28 at 01 58 14" src="https://user-images.githubusercontent.com/111317260/204175844-87278fb0-54dc-4413-b1ed-a42ff6a5472e.png">
-# Webpagetest
+# Webpagetest.com
 
 [results
 ](https://www.webpagetest.org/result/221128_AiDcF9_1DE/)
@@ -94,7 +93,7 @@ This is a memory game website , Its aim is to test ur speed on how quick you can
 
 # Deployment 
  
- * his section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub)
+ * This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub)
 
  * The site was deployed to GitHub pages. The steps to deploy are as follows: In the GitHub repository, navigate to the Settings tab From the source section drop-down menu, select the Master Branch Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
  
@@ -102,8 +101,8 @@ This is a memory game website , Its aim is to test ur speed on how quick you can
  * In order to make a local copy of this project, you can clone it. In your IDE Terminal, type the following command to clone my repository:
   git clone Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
   Open in Gitpod
- 
-# Known Bugs 
+ # Known Bugs 
+ * Currently no bugs as i am aware, Open to feedback if found.
 
  
  # Credits 
@@ -113,4 +112,6 @@ This is a memory game website , Its aim is to test ur speed on how quick you can
   * I learned the code from [](https://www.youtube.com/watch?v=dqqxkrKhfS4) and used this in my project to undestand how the javascript proceas took place.
   * I used hover effect w3schools to make the hover effect on the buttons on the game.
   * The Font faimly was inspired by the Love running walk through Project.
-  
+  * stack overflow was used as guidance trough out the project to help with some Javascript. 
+  * Css.tricks was also used as guidance through the project
+  * love-Running Read-me template was used to help with developing of this Read-me file. 
