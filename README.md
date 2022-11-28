@@ -7,24 +7,20 @@
 # About 
 This is a memory game website , Its aim is to test ur speed on how quick you can match each card , The cards have colors on the facing down side which you can click to see what color it is , The aim is to get the lowest number of attempts and lowest timescore. you can play with ur friends to test who has the best memory.
 
-# Table of Contents 
-
-
-
-
-
-
 # Design 
  * Color Scheme done in order of importanace across the site.
    
  
 ![Screen Shot 2022-11-28 at 02 31 22](https://user-images.githubusercontent.com/111317260/204178932-cf5e9c19-897c-4bd8-b340-98e47262a9c2.png)
+ 
+ * HTML 
+   * HTML5 was used to create the structure of the site.
 
-
-
-
-
-
+ * CSS3 
+   * CSS3 was used to add styling to the site.
+ 
+ * JavaScript (js) 
+   * was used to create functionality , responsive across the Game. Backend progamming that allows you to implement complex features on web pages   
  * Typograhpy 
    * The main font used was sans-serif
 
@@ -55,7 +51,7 @@ This is a memory game website , Its aim is to test ur speed on how quick you can
 
 
    * Instructions Page / Username
-     * This is where the user first seesthes on how to game played and where to create there username.
+     * This is where the user first gets a look of the instructions of how to play the game and where to create there username.
    
 <img width="604" alt="Screen Shot 2022-11-28 at 01 35 56" src="https://user-images.githubusercontent.com/111317260/204174262-7bac916f-963f-4df8-9613-5913713a72d6.png">
    * Mobile Deisgn 
@@ -78,14 +74,18 @@ This is a memory game website , Its aim is to test ur speed on how quick you can
     
 <img width="189" alt="Screen Shot 2022-11-28 at 01 34 51" src="https://user-images.githubusercontent.com/111317260/204174624-4a7329c3-a57d-4b18-aa6f-407dc03b6d8e.png">
 
-# Memory Game Guidance 
+# Features Guidance 
 * Instruction page the user first sees is very basic its telling the user about how to play the game and how to begin by entering there username.
-  * The user must fill in the Usernamer correctly befor entering the game if the user puts in not enough letters the computer lets them know this by displaying feeback colored in red guiding the user to correctly make a valid Username
 
-* when the User entera a valid username they enter the Game-Area where they are shown 16 cards, 8 pairs , where there objective is to match them by clicking the cards to see what color is shown underneat the first card will only match with the second card that is chosen. 
- * There goal is to get the lowest number of Attempts & timer.
-  * One the user is completed the results are push to the Highscore leaderboard 
-   * Most recent results will be High-Lighted in yellow to indicate there tr
+* The user must fill in the Usernamer correctly befor entering the game if the user puts in not enough letters/ or adds numbers the computer lets them know this by displaying feeback colored in red guiding the user to correctly make a valid Username
+
+* when the User enters a valid username they enter the Game-Area where they are shown 16 cards, 8 pairs , where there objective is to match them by clicking the cards to see what color is shown underneat the first card will only match with the second card that is chosen.
+ 
+* There goal is to get the lowest number of Attempts & timer.
+
+* Once the user is completed the results are pushed to the Highscore leaderboard 
+ 
+* when the User submits there most recent score it'll be hightlighted in yellow , if the user1 0r user2 had a score before this it will be non-highted scores will be set graded by least number of attemps and time., 
  
  # Github
  * Github was used to store the project's code after being pushed from Git.
@@ -107,9 +107,11 @@ This is a memory game website , Its aim is to test ur speed on how quick you can
  # JSHINT Validator 
  * [Results
 ](https://jshint.com/) 
-* Warnings are showing , Would like to get feedback on these. 
+* The following info messages being returned in the javascript validator are simply saying that our syntax (=>) is used for ES6 Javscript.
+* I am using vanilla javscript in this project so its outputting the info messages above.
+The same can be said about the spread operator info message.
+This is not an error, its simply a message about our javascript version/syntax. It can be ignored.# Lighthouse Test on Inspect
 
-# Lighthouse Test on Inspect 
 * Deskstop Devices
 <img width="767" alt="Screen Shot 2022-11-28 at 01 56 42" src="https://user-images.githubusercontent.com/111317260/204175835-4108b90b-1a0f-486c-9e3f-265698b58512.png">
 * Mobile Devices 
@@ -119,6 +121,14 @@ This is a memory game website , Its aim is to test ur speed on how quick you can
 
 * [results
 ](https://www.webpagetest.org/result/221128_AiDcF9_1DE/)
+
+# Test.js Unit testing 
+
+* This was used to test the code using the inspect element where you can see in the console if it has passed or not. 
+ * Refresh brower , Click inspect , click Console , You can view results of the test.js file 
+* Screenshot of test.js
+* ![Screen Shot 2022-11-28 at 14 19 16](https://user-images.githubusercontent.com/111317260/204300721-f2d9f900-1d6a-40a1-94ef-0ee779a01f00.png)
+
 
 # User Testing 
  * My family and friends tested it across there laptop and mobile devices which they enjoyed and didnt have and issues. 
@@ -135,15 +145,19 @@ This is a memory game website , Its aim is to test ur speed on how quick you can
   Open in Gitpod
  # Known Bugs 
  * Currently no bugs as i am aware, Open to feedback if found.
+ 
+ # Features Left to Implement
+  * The cards when displayed on mobile devices shows a white box around the hand icon which i would like to come back and change this or implement a new icon.
+            <img width="63" alt="Screen Shot 2022-11-28 at 14 06 17" src="https://user-images.githubusercontent.com/111317260/204297478-1f0e79a1-f10b-430a-b46e-d231c5fa8464.png">
 
  
  # Credits 
  
   # Code 
-  * I used flexbox to make the website more easier and to make it more responsive i used a guide from csstrick.com and flexbox to make this possible 
+  * I used[ Flexbox.tricks ](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)to make the website more easier and to make it more responsive i used a guide from csstrick.com and flexbox to make this possible 
   * I learned the code from [Memory Game Tutorial](https://www.youtube.com/watch?v=dqqxkrKhfS4) and used this in my project to undestand how the javascript process took place.
-  * I used hover effect w3schools to make the hover effect on the buttons on the game.
+  * I used hover effect[ w3schools ](https://www.w3schools.com/cssref/sel_hover.php)to make the hover effect on the buttons on the game.
   * The Font faimly was inspired by the Love running walk through Project.
-  * stack overflow was used as guidance trough out the project to help with some Javascript. 
-  * Css.tricks was also used as guidance through the project
+  *[Stackoverflow.com ](https://stackoverflow.com/)was used as guidance trough out the project to help with some Javascript. 
+  *[ Css.tricks ](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)was also used as guidance through the project
   * love-Running Read-me template was used to help with developing of this Read-me file. 
