@@ -31,9 +31,9 @@ This is a memory game website , Its aim is to test ur speed on how quick you can
  * Wireframes 
    * The Wireframes were created using justinmind however, the layout and design was fallowed very loosely and changed during the mockup stage.
 
-  *responive 
-   * The overall site is responsive across all of the pages.
-   * 
+  * Responsive 
+   * The overall site is responsive across all of the pages which was held by usinf media queries.
+   
    * Home-page
 
 
