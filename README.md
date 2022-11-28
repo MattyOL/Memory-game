@@ -52,8 +52,21 @@ This is a memory game website , Its aim is to test ur speed on how quick you can
  * Git was used for version control through the Gitpod terminal.
  
  # Functionality Testing
- *
+ # HTML5 Validator
+ *[Results-Pass
+](https://validator.w3.org/nu/#textarea) 
+ 
+ 
+ # CSS3 Validator
+ *  [Results
+](https://jigsaw.w3.org/css-validator/validator)
+ * 1. Value Error : width Too many values or values are not recognized : fill-available Without this i cannot cain the card Img in its container would like to get feedback on this. 
+ * 2. Warning , Imported style sheets are not checked in direct input and file upload modes
+
+ # JSHINT Validator 
+ *¨
  # Deployment 
+ 
  *This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub)
 
  * The site was deployed to GitHub pages. The steps to deploy are as follows: In the GitHub repository, navigate to the Settings tab From the source section drop-down menu, select the Master Branch Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
