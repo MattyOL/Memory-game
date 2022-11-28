@@ -11,11 +11,11 @@ body {
     background-color: black;
 }
 
-.home {
+.gamescreen {
     box-sizing: border-box;
-    width: 650px;
+    width: 630px;
     padding: 3em 3em;
-    background-color: aqua;
+    background-color: rgba(0, 183, 255, 0.534);
     position: absolute;
     transform: translate(-50%, -50%);
     left: 50%;
@@ -37,6 +37,7 @@ body {
 .stats-container {
     text-align: right;
     margin-bottom: 1.2em;
+    color: #fff5f8;
 }
 
 #attempts-count {
@@ -65,8 +66,8 @@ body {
     backface-visibility: hidden;
 }
 .card-after img {
-    width: 100%;
     width: fill-available;
+    width: 100%;
 }
 
 .card-before i {
@@ -103,12 +104,16 @@ body {
 .instruction {
     color: #fff5f8;
     padding: 4em 4em;
-    background-color: grey;
+    background-color: rgba(0, 183, 255, 0.534);
     border-radius: 15px;
 }
 .instruction h1 {
     text-align: center;
+    margin-bottom: 25px;
     
+}
+.instruction p {
+    margin: 10px;
 }
 /* Start game / stop game */
 #start{
@@ -178,6 +183,7 @@ body {
     color: white;
     display: block;
     text-align: center;
+    margin-top: 20px;
 } 
 #feedback {
     color: red;
@@ -266,7 +272,7 @@ input[type="text"] {
 }
 
 .highlight {
-    background-color: #7f854f;
+    background-color: rgba(242, 255, 129, 0.925);
 }
 
 .retryQuestion {
@@ -344,7 +350,7 @@ input[type="text"] {
     background-color: #b92c2c;
 }
 #stopTryAgain {
-    background-color: #14ac4e;
+    background-color: green;
 }
 
 
@@ -353,7 +359,7 @@ input[type="text"] {
 /*Media Queries for Tablets & mobile devices */
 
 @media screen and (max-width:650px) {
-    .home {
+    .gamescreen {
         width: auto;
         height: auto;
         padding: 1em 1em;
@@ -388,13 +394,12 @@ input[type="text"] {
 
     input[type="text"] {
     max-width: 300px;
-    padding: none;
     margin: 0.25em auto;
     font-size: 1.6rem;
     
     }
     
-    .home {
+    .gamescreen {
         width: 100%;
         padding: 2em 1em 1em 1em;
     }
@@ -421,3 +426,4 @@ input[type="text"] {
 }
 
 
+}

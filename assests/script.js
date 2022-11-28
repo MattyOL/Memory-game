@@ -1,27 +1,27 @@
-const attempts = document.getElementById("attempts-count");
-const timeValue = document.getElementById("time");
-const startButton = document.getElementById("start");
-const stopButton = document.getElementById("stop");
-const gameContainer = document.querySelector(".game-container");
-const resultElement = document.getElementById("result");
-const controls = document.querySelector(".controls-area");
-const homeArea = document.querySelector(".home");
-const retryQuestionContainer = document.querySelector(
+var attempts = document.getElementById("attempts-count");
+var timeValue = document.getElementById("time");
+var startButton = document.getElementById("start");
+var stopButton = document.getElementById("stop");
+var gameContainer = document.querySelector(".game-container");
+var resultElement = document.getElementById("result");
+var controls = document.querySelector(".controls-area");
+var gamescreenArea = document.querySelector(".gamescreen");
+var retryQuestionContainer = document.querySelector(
   ".retryQuestionContainer"
 );
-const username = document.getElementById("user-input");
-const feedback = document.getElementById("feedback");
-const submitBtn = document.getElementById("submit");
-const resultArea = document.getElementById("result-area");
-// const highScoreElement = document.getElementById('cc');
+var username = document.getElementById("user-input");
+var feedback = document.getElementById("feedback");
+var submitBtn = document.getElementById("submit");
+var resultArea = document.getElementById("result-area");
+// var highScoreElement = document.getElementById('cc');
 
-let cards;
-let interval;
-let firstCard = false;
-let secondCard = false;
-let indexOfLastEntry = 0;
+var cards;
+var interval;
+var firstCard = false;
+var secondCard = false;
+var indexOfLastEntry = 0;
 
-const items = [
+var items = [
   { name: "blue", image: "./assests/images/blue.jpg"},
   { name: "burdundy", image: "./assests/images/burgundy.jpg"},
   { name: "darkred", image: "./assests/images/darkred.jpg"},
@@ -36,16 +36,16 @@ const items = [
 
 
 //Initialize values and func calls
-const initializer = () => {
+function initializer() {
   resultElement.innerText = "";
   winCount = 0;
-  let cardValues = generateRandom();
+  var cardValues = generateRandom();
   console.log(cardValues);
   matrixGenerator(cardValues);
 };
 
 function validateUserInput(user) {
-  let errorMsg = "";
+  var errorMsg = "";
 
   // if no user input is inserted
   if (user == "") {
@@ -64,7 +64,7 @@ function validateUserInput(user) {
 
   // if errorMsg is not empty
   if (errorMsg != "") {
-    // display errorMsg in feedback div on home page
+    // display errorMsg in feedback div on gamescreen page
     feedback.innerHTML = errorMsg;
     // adds functionality for screen readers to read error message
     // when it is displayed on screen
@@ -77,7 +77,7 @@ function validateUserInput(user) {
 }
 
 function checkForSpecialCharacters(username) {
-  const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~£]/;
+  var specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~£]/;
 
   if (specialChars.test(username)) {
     return true;
@@ -108,10 +108,10 @@ if (document.getElementById("user-input") != null) {
     });
 }
 //For timer
-let secondsValue = 0;
-let minutesValue = 0;
+var secondsValue = 0;
+var minutesValue = 0;
 
-const timeGenerator = () => {
+function timeGenerator() {
   seconds += 1;
   //minutes logic
   if (seconds >= 60) {
@@ -124,36 +124,36 @@ const timeGenerator = () => {
   timeValue.innerHTML = `<span>Time:</span>${minutesValue}:${secondsValue}`;
 };
 //For calculating Attempts
-const attemptsCounter = () => {
+function attemptsCounter() {
   attemptsCount += 1;
   attempts.innerHTML = `<span>Attempts:</span>${attemptsCount}`;
 };
 
 //Pick random objects from the items array
-const generateRandom = (size = 4) => {
+var generateRandom = (size = 4) => {
   //temporary array
-  let tempArray = [...items];
+  var tempArray = [...items];
   //initializes cardValues array
-  let cardValues = [];
+  var cardValues = [];
   //size should be double (4*4 matrix)/2 since pairs of objects would exist
   size = (size * size) / 2;
   //Random object selection
-  for (let i = 0; i < size; i++) {
-    const randomIndex = Math.floor(Math.random() * tempArray.length);
+  for (var i = 0; i < size; i++) {
+    var randomIndex = Math.floor(Math.random() * tempArray.length);
     cardValues.push(tempArray[randomIndex]);
     //once selected remove the object from temp array
     tempArray.splice(randomIndex, 1);
   }
   return cardValues;
 };
-const matrixGenerator = (cardValues, size = 4) => {
+var matrixGenerator = (cardValues, size = 4) => {
   gameContainer.innerHTML = "";
   cardValues = [...cardValues, ...cardValues];
 
   //simple shuffle
   cardValues.sort(() => Math.random() - 0.5);
   console.log(cardValues);
-  for (let i = 0; i < size * size; i++) {
+  for (var i = 0; i < size * size; i++) {
     gameContainer.innerHTML += `
      <div class="card-container" data-card-value="${cardValues[i].name}">
         <div class="card-before"><i class="fa-regular fa-hand-pointer"></i></div>
@@ -183,7 +183,7 @@ const matrixGenerator = (cardValues, size = 4) => {
           attemptsCounter();
           //secondCard and value
           secondCard = card;
-          let secondCardValue = card.getAttribute("data-card-value");
+          var secondCardValue = card.getAttribute("data-card-value");
           if (firstCardValue == secondCardValue) {
             //if both cards match add matched class so these cards would beignored next time
             firstCard.classList.add("matched");
@@ -200,21 +200,21 @@ const matrixGenerator = (cardValues, size = 4) => {
               resultElement.innerHTML = `<h2>You Won</h2>
             <h4>Moves: ${attemptsCount}</h4>`;
 
-              const score = {
+              var score = {
                 name: username.value,
                 score: attemptsCount,
                 time: `${minutesValue}:${secondsValue}`,
               };
 
-              highscoreArray.push(score);
+              highscoreObject.push(score);
 
               // Sorts the high score object
-              highscoreArray.sort((a, b) => {
+              highscoreObject.sort((a, b) => {
                 return a.score - b.score;
               });
 
               // Finds what index the last high score was stored at
-              indexOfLastEntry = highscoreArray.findIndex(
+              indexOfLastEntry = highscoreObject.findIndex(
                 (item) => item.score === score.score
               );
               changePage(4);
@@ -222,10 +222,10 @@ const matrixGenerator = (cardValues, size = 4) => {
           } else {
             //if the cards dont match
             //flip the cards back to normal
-            let [tempFirst, tempSecond] = [firstCard, secondCard];
+            var [tempFirst, tempSecond] = [firstCard, secondCard];
             firstCard = false;
             secondCard = false;
-            let delay = setTimeout(() => {
+            var delay = setTimeout(() => {
               tempFirst.classList.remove("flipped");
               tempSecond.classList.remove("flipped");
             }, 900);
@@ -237,8 +237,8 @@ const matrixGenerator = (cardValues, size = 4) => {
 };
 
 function displayResults(correctTotal) {
-  let user = username.value;
-  let score = attemptsCount;
+  var user = username.value;
+  var score = attemptsCount;
 
   resultArea.classList.remove("hide");
   retryQuestionContainer.style.display = "none";
@@ -246,27 +246,27 @@ function displayResults(correctTotal) {
   // Create Table
   mytable =
     "<table class='table' id='table'>" +
-    "<tr><th>Username</th><th>Time</th><th>Score</th></tr>";
+    "<tr><th>Username</th><th>Time</th><th>Attempts</th></tr>";
 
-  highscoreArray.sort((a, b) => {
+  highscoreObject.sort((a, b) => {
     return a.score - b.score;
   });
 
-  for (i = 0; i < highscoreArray.length; i++) {
+  for (i = 0; i < highscoreObject.length; i++) {
     mytable +=
       "<tr class='trClass'><td id='highScoreName'>" +
-      highscoreArray[i].name +
+      highscoreObject[i].name +
       "</td><td id='highScoreName'>" +
-      highscoreArray[i].time +
+      highscoreObject[i].time +
       "</td><td>" +
-      highscoreArray[i].score +
+      highscoreObject[i].score +
       "</td></tr>";
   }
   mytable += "</table>";
   document.getElementById("table").outerHTML = mytable;
 
   // Retrieve all Table rows
-  let el = document.getElementsByClassName("trClass");
+  var el = document.getElementsByClassName("trClass");
   // Highlight the user's last high score
   el[indexOfLastEntry].classList.add("highlight");
 }
@@ -279,7 +279,7 @@ var attemptsCount = 0;
 var numberOfMatches = 0;
 var winCount = 0;
 // Highscore
-let highscoreArray = Object.keys({});
+var highscoreObject = Object.keys({});
 
 // Each Case respresents each web page
 function changePage(pageNo) {
@@ -289,7 +289,7 @@ function changePage(pageNo) {
       controls.classList.add("hide");
       retryQuestionContainer.style.display = "none";
       controls.classList.remove("hide");
-      homeArea.classList.remove("hide");
+      gamescreenArea.classList.remove("hide");
       username.value = "";
       resultArea.style.display = "none";
       break;
@@ -315,7 +315,7 @@ function changePage(pageNo) {
     // End Game - Ask User if they want to play again
     case 3:
       controls.classList.add("hide");
-      homeArea.classList.add("hide");
+      gamescreenArea.classList.add("hide");
       retryQuestionContainer.style.display = "flex";
 
       stopButton.classList.add("hide");
@@ -326,7 +326,7 @@ function changePage(pageNo) {
     // End Game - Show Highscores
     case 4:
       controls.classList.add("hide");
-      homeArea.classList.add("hide");
+      gamescreenArea.classList.add("hide");
       resultArea.style.display = "flex";
       displayResults();
       break;
@@ -339,7 +339,7 @@ function stopOrContinueGame(continueGame) {
   // Check if user wants to try again & keep highscore if they do
   if (!continueGame) {
     // if false
-    highscoreArray = Object.keys({});
+    highscoreObject = Object.keys({});
   }
   changePage(1);
 }
