@@ -375,11 +375,17 @@ input[type="text"] {
         font-size: 25px;
         border: 1px solid ;
     }
+    .table {
+        font-size: 20px;
+        
+    }
+ 
 }
 @media screen and (max-width:650px) {
     .input-label{
        
 }
+
 @media screen and (max-width:480px) {
    .instruction {
        padding: 2em 2em;

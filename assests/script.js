@@ -107,6 +107,8 @@ if (document.getElementById("user-input") != null) {
       }
     });
 }
+/*
+ * Code was taken from Youtube Tutorial by Coding Artist Meory Game Javascript Project ? HTML, CSS Javscript*/
 //For timer
 var secondsValue = 0;
 var minutesValue = 0;
@@ -235,7 +237,10 @@ var matrixGenerator = (cardValues, size = 4) => {
     });
   });
 };
-
+/**
+ * 
+ * @param {END OF CODE BY Coding Artist} correctTotal 
+ */
 function displayResults(correctTotal) {
   var user = username.value;
   var score = attemptsCount;
