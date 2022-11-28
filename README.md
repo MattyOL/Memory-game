@@ -1,5 +1,9 @@
 # Click & Match
 
+<img width="1114" alt="Screen Shot 2022-11-28 at 13 26 59" src="https://user-images.githubusercontent.com/111317260/204289275-3dd0a848-9455-4b74-9e09-6a0b8ce608ec.png">
+
+
+
 # About 
 This is a memory game website , Its aim is to test ur speed on how quick you can match each card , The cards have colors on the facing down side which you can click to see what color it is , The aim is to get the lowest number of attempts and lowest timescore. you can play with ur friends to test who has the best memory.
 
@@ -50,19 +54,28 @@ This is a memory game website , Its aim is to test ur speed on how quick you can
 
 
 
-   * Instructions Page / Username 
+   * Instructions Page / Username
+     * This is where the user first seesthes on how to game played and where to create there username.
+   
 <img width="604" alt="Screen Shot 2022-11-28 at 01 35 56" src="https://user-images.githubusercontent.com/111317260/204174262-7bac916f-963f-4df8-9613-5913713a72d6.png">
    * Mobile Deisgn 
+
 <img width="204" alt="Screen Shot 2022-11-28 at 01 36 34" src="https://user-images.githubusercontent.com/111317260/204174328-fab705d8-62b7-4132-9f05-39382060220c.png">
 
    * Main-Game-Area
+      * This is were the user will enter after submitting there Username and will start game were they will test there memory skills.
+    
  <img width="1073" alt="Screen Shot 2022-11-28 at 01 36 59" src="https://user-images.githubusercontent.com/111317260/204174414-86af1afd-2124-446b-93e4-b73b5ce0d351.png">
    * Mobile Design
+    
  <img width="240" alt="Screen Shot 2022-11-28 at 01 39 41" src="https://user-images.githubusercontent.com/111317260/204174458-d4cc64cb-ef08-40cb-8cd4-f695516e3625.png">
 
    * High-Score Leaderboard page 
-* <img width="1393" alt="Screen Shot 2022-11-28 at 01 34 07" src="https://user-images.githubusercontent.com/111317260/204174561-4265fcd8-779a-47c7-8a91-d55bf2b7ef7c.png">
+      * This is were the user can view there score they recieved from playing the Click & match card game , They can also compare there scores if they retry the game where they have the option to create there username again if its New user or keep the same username and keep the scoreboard going to see who can ge the best results.
+ <img width="1393" alt="Screen Shot 2022-11-28 at 01 34 07" src="https://user-images.githubusercontent.com/111317260/204174561-4265fcd8-779a-47c7-8a91-d55bf2b7ef7c.png">
+ 
    * Mobile Design
+    
 <img width="189" alt="Screen Shot 2022-11-28 at 01 34 51" src="https://user-images.githubusercontent.com/111317260/204174624-4a7329c3-a57d-4b18-aa6f-407dc03b6d8e.png">
 
 # Memory Game Guidance 
@@ -101,11 +114,14 @@ This is a memory game website , Its aim is to test ur speed on how quick you can
 <img width="767" alt="Screen Shot 2022-11-28 at 01 56 42" src="https://user-images.githubusercontent.com/111317260/204175835-4108b90b-1a0f-486c-9e3f-265698b58512.png">
 * Mobile Devices 
 <img width="801" alt="Screen Shot 2022-11-28 at 01 58 14" src="https://user-images.githubusercontent.com/111317260/204175844-87278fb0-54dc-4413-b1ed-a42ff6a5472e.png">
+
 # Webpagetest.com
 
 * [results
 ](https://www.webpagetest.org/result/221128_AiDcF9_1DE/)
 
+# User Testing 
+ * My family and friends tested it across there laptop and mobile devices which they enjoyed and didnt have and issues. 
 
 # Deployment 
  
@@ -125,7 +141,7 @@ This is a memory game website , Its aim is to test ur speed on how quick you can
  
   # Code 
   * I used flexbox to make the website more easier and to make it more responsive i used a guide from csstrick.com and flexbox to make this possible 
-  * I learned the code from [](https://www.youtube.com/watch?v=dqqxkrKhfS4) and used this in my project to undestand how the javascript proceas took place.
+  * I learned the code from [Memory Game Tutorial](https://www.youtube.com/watch?v=dqqxkrKhfS4) and used this in my project to undestand how the javascript process took place.
   * I used hover effect w3schools to make the hover effect on the buttons on the game.
   * The Font faimly was inspired by the Love running walk through Project.
   * stack overflow was used as guidance trough out the project to help with some Javascript. 
