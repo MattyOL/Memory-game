@@ -33,21 +33,23 @@ This is a memory game website , Its aim is to test ur speed on how quick you can
 
 ![Screen Shot 2022-11-22 at 16 13 15](https://user-images.githubusercontent.com/111317260/203364950-319550f5-b3fd-44f2-93a7-dfe6caee7f62.png)
 
-# Finalised Design 
+   * High-Score-Leaderboard
+    ![Screen Shot 2022-11-28 at 01 51 42](https://user-images.githubusercontent.com/111317260/204175219-edb7e9cc-0e23-4e36-b77a-aa467a6db871.png)
 
-* Instructions Page / Username 
+
+   * Instructions Page / Username 
 <img width="604" alt="Screen Shot 2022-11-28 at 01 35 56" src="https://user-images.githubusercontent.com/111317260/204174262-7bac916f-963f-4df8-9613-5913713a72d6.png">
-* Mobile Deisgn 
+   * Mobile Deisgn 
 <img width="204" alt="Screen Shot 2022-11-28 at 01 36 34" src="https://user-images.githubusercontent.com/111317260/204174328-fab705d8-62b7-4132-9f05-39382060220c.png">
 
-* Main-Game-Area
+   * Main-Game-Area
  <img width="1073" alt="Screen Shot 2022-11-28 at 01 36 59" src="https://user-images.githubusercontent.com/111317260/204174414-86af1afd-2124-446b-93e4-b73b5ce0d351.png">
-* Mobile Design
+   * Mobile Design
  <img width="240" alt="Screen Shot 2022-11-28 at 01 39 41" src="https://user-images.githubusercontent.com/111317260/204174458-d4cc64cb-ef08-40cb-8cd4-f695516e3625.png">
 
-* High-Score Leaderboard page 
+   * High-Score Leaderboard page 
 * <img width="1393" alt="Screen Shot 2022-11-28 at 01 34 07" src="https://user-images.githubusercontent.com/111317260/204174561-4265fcd8-779a-47c7-8a91-d55bf2b7ef7c.png">
-* Mobile Design
+   * Mobile Design
 <img width="189" alt="Screen Shot 2022-11-28 at 01 34 51" src="https://user-images.githubusercontent.com/111317260/204174624-4a7329c3-a57d-4b18-aa6f-407dc03b6d8e.png">
 
 
@@ -74,8 +76,18 @@ This is a memory game website , Its aim is to test ur speed on how quick you can
  * Warning , Imported style sheets are not checked in direct input and file upload modes
 
  # JSHINT Validator 
- *
- # Deployment 
+ *[Results
+](https://jshint.com/) 
+
+# Lighthouse Test inpect 
+* Deskstop Devices
+<img width="767" alt="Screen Shot 2022-11-28 at 01 56 42" src="https://user-images.githubusercontent.com/111317260/204175835-4108b90b-1a0f-486c-9e3f-265698b58512.png">
+* Mobile Devices 
+<img width="801" alt="Screen Shot 2022-11-28 at 01 58 14" src="https://user-images.githubusercontent.com/111317260/204175844-87278fb0-54dc-4413-b1ed-a42ff6a5472e.png">
+# Webpagetest
+[results
+](https://www.webpagetest.org/result/221128_AiDcF9_1DE/)
+# Deployment 
  
  * his section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub)
 
