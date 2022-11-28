@@ -31,7 +31,9 @@ This is a memory game website , Its aim is to test ur speed on how quick you can
  * Wireframes 
    * The Wireframes were created using justinmind however, the layout and design was fallowed very loosely and changed during the mockup stage.
 
-
+  *responive 
+   * The overall site is responsive across all of the pages.
+   * 
    * Home-page
 
 
@@ -146,6 +148,7 @@ This is not an error, its simply a message about our javascript version/syntax. 
  * This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub)
 
  * The site was deployed to GitHub pages. The steps to deploy are as follows: In the GitHub repository, navigate to the Settings tab From the source section drop-down menu, select the Master Branch Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
+ * Link to deployed site - 
  
  # Local Deployment 
  * In order to make a local copy of this project, you can clone it. In your IDE Terminal, type the following command to clone my repository:
