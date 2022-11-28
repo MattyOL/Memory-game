@@ -87,6 +87,14 @@ This is a memory game website , Its aim is to test ur speed on how quick you can
  
 * when the User submits there most recent score it'll be hightlighted in yellow , if the user1 0r user2 had a score before this it will be non-highted scores will be set graded by least number of attemps and time., 
  
+* Image of Highscore Leaderboard
+<img width="1335" alt="Screen Shot 2022-11-28 at 15 15 58" src="https://user-images.githubusercontent.com/111317260/204313850-5a7f523d-b60e-4319-bea6-cdc29a09511e.png">
+
+
+
+<img width="309" alt="Screen Shot 2022-11-28 at 15 12 31" src="https://user-images.githubusercontent.com/111317260/204313308-f308326e-4c6a-4a1c-8094-2952d0bd1c60.png">
+
+
  # Github
  * Github was used to store the project's code after being pushed from Git.
  * Gitpod terminal was used to commit my code using Git and push it to Github.
