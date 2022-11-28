@@ -11,8 +11,15 @@ This is a memory game website , Its aim is to test ur speed on how quick you can
 
 
 # Design 
- * Color Scheme 
-<img width="112" alt="Screen Shot 2022-11-28 at 02 25 08" src="https://user-images.githubusercontent.com/111317260/204178357-e9b6a73e-bb0d-407a-bc5a-cf4c8f6118dd.png"><img width="98" alt="Screen Shot 2022-11-28 at 02 25 00" src="https://user-images.githubusercontent.com/111317260/204178372-9bf5f9ca-4399-46ad-a019-bf2d1769a84a.png">![Uploading Screen Shot 2022-11-28 at 02.26.54.png…]()
+ * Color Scheme done in order of importanace across the site.
+   
+ 
+![Screen Shot 2022-11-28 at 02 31 22](https://user-images.githubusercontent.com/111317260/204178932-cf5e9c19-897c-4bd8-b340-98e47262a9c2.png)
+
+
+
+
+
 
  * Typograhpy 
    * The main font used was sans-serif
@@ -37,9 +44,10 @@ This is a memory game website , Its aim is to test ur speed on how quick you can
 
    * High-Score-Leaderboard
 
+![Screen Shot 2022-11-28 at 02 33 31](https://user-images.githubusercontent.com/111317260/204179170-f12e5940-8bad-464f-883c-3a615ed825a2.png)
 
 
-    ![Screen Shot 2022-11-28 at 01 51 42](https://user-images.githubusercontent.com/111317260/204175219-edb7e9cc-0e23-4e36-b77a-aa467a6db871.png)
+
 
 
    * Instructions Page / Username 
@@ -57,10 +65,14 @@ This is a memory game website , Its aim is to test ur speed on how quick you can
    * Mobile Design
 <img width="189" alt="Screen Shot 2022-11-28 at 01 34 51" src="https://user-images.githubusercontent.com/111317260/204174624-4a7329c3-a57d-4b18-aa6f-407dc03b6d8e.png">
 
+# Memory Game Guidance 
+* Instruction page the user first sees is very basic its telling the user about how to play the game and how to begin by entering there username.
+  * The user must fill in the Usernamer correctly befor entering the game if the user puts in not enough letters the computer lets them know this by displaying feeback colored in red guiding the user to correctly make a valid Username
 
-# Media 
- * The Imgs were screen shoted and taken from color pallete. 
-
+* when the User entera a valid username they enter the Game-Area where they are shown 16 cards, 8 pairs , where there objective is to match them by clicking the cards to see what color is shown underneat the first card will only match with the second card that is chosen. 
+ * There goal is to get the lowest number of Attempts & timer.
+  * One the user is completed the results are push to the Highscore leaderboard 
+   * Most recent results will be High-Lighted in yellow to indicate there tr
  
  # Github
  * Github was used to store the project's code after being pushed from Git.
@@ -69,7 +81,7 @@ This is a memory game website , Its aim is to test ur speed on how quick you can
  
  # Functionality Testing
  # HTML5 Validator
- *[Results-Pass
+ * [Results-Pass
 ](https://validator.w3.org/nu/#textarea) 
  
  
@@ -80,7 +92,7 @@ This is a memory game website , Its aim is to test ur speed on how quick you can
  * Warning , Imported style sheets are not checked in direct input and file upload modes
 
  # JSHINT Validator 
- *[Results
+ * [Results
 ](https://jshint.com/) 
 * Warnings are showing , Would like to get feedback on these. 
 
@@ -91,7 +103,7 @@ This is a memory game website , Its aim is to test ur speed on how quick you can
 <img width="801" alt="Screen Shot 2022-11-28 at 01 58 14" src="https://user-images.githubusercontent.com/111317260/204175844-87278fb0-54dc-4413-b1ed-a42ff6a5472e.png">
 # Webpagetest.com
 
-[results
+* [results
 ](https://www.webpagetest.org/result/221128_AiDcF9_1DE/)
 
 
